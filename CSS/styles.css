@@ -6,9 +6,12 @@
     --color-headings: #1b0760;
     --color-body: #918ca4;
 
+
+    /*TYPOGRAPHY*/
+
 }
  html{ 
-     font-size: 62.5%  /*10px*/
+     font-size: 62.5%  /* 62.5 of 16px = 10px*/
  }
 
 body{
@@ -48,5 +51,36 @@ p{
     }
     h3{
         font-size: 2.4rem;
+    }
+}
+
+/* LINKS */
+
+a{
+   text-decoration: none;
+}
+.link-arrow{    
+    color: var(--color-accent);
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.link-arrow::after{
+  /* añadimos una felcha detras del link arrow */  
+    content: "-->";
+    padding-left: 5px;
+    transition: padding-left 0.15s;  
+}
+
+.link-arrow:hover::after{ 
+    /* el target es el "fater" pero cuando el cursor esté sobre el link arrow */
+    padding-left: 10px;  
+}
+
+@media screen and (min-width: 1024px) {
+    /* Definimos las media queries para cada componente porque los breakpoins puede que no sean los mismos para cada cosa */
+    .link-arrow{
+        font-size: 1.5rem; 
+    /* En pantallas pequeñas es mejor hacer los links más grandes para que sea mas leible */
     }
 }
