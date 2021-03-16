@@ -84,3 +84,36 @@ a{
     /* En pantallas pequeñas es mejor hacer los links más grandes para que sea mas leible */
     }
 }
+
+/* BADGES */
+
+.badge {
+    border-radius: 20px; 
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 0.5rem 2rem; 
+    white-space: nowrap; /* con esta propiedad el texto no salta de línea aunque el contenedor sea pequeño*/
+}
+
+.badge--small{
+    font-size: 1.6rem;
+}
+
+.badge--primary /* block--modifier*/ {
+    background: var(--color-primary);
+    color: #fff;   
+}
+
+.badge--secondary{
+    background: var(--color-secondary);
+    color: #fff;
+}
+
+@media screen and (min-width: 1024px) {
+    .badge {
+        font-size: 1.5rem;
+    }
+    .badge--small {
+        font-size: 1.2rem;
+    }
+}
