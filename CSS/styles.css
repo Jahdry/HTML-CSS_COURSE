@@ -435,6 +435,17 @@ a{
     .quote__company{
         font-size: 1.6rem;
     }
+}
 
-    /* GRIDS */
-    /* La pagina es 2.1 en desktop u 1x1 en mobile */
+/* GRIDS */
+/* La pagina es 2.1 en desktop u 1x1 en mobile */
+
+.grid{
+    display:grid;
+}
+
+@media screen and (min-width: 768px){
+    .grid--media{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
