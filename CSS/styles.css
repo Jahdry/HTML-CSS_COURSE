@@ -22,7 +22,7 @@ html {
 
 body {
   font-family: Inter, Arial, Helvetica, sans-serif;
-  font-size: 2.4rem;
+  font-size: 2rem;
   line-height: 1.5;
   color: var(--color-body);
 }
@@ -44,6 +44,8 @@ h2 {
 }
 h3 {
   font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 p {
@@ -58,7 +60,7 @@ p {
     font-size: 8rem;
   }
   h2 {
-    font-size: 3rem;
+    font-size: 4rem;
   }
   h3 {
     font-size: 2.4rem;
@@ -334,10 +336,9 @@ a {
   background: #02cdf1;
 }
 
-
 /* PLANS (card + badge + list + button) */
 .plan {
-  transition: transform .2s ease-out;
+  transition: transform 0.2s ease-out;
 }
 .plan__name {
   color: #fff;
@@ -357,7 +358,6 @@ a {
   margin-right: 1rem;
 }
 
-
 .plan__description {
   font-size: 2rem;
   font-weight: 300;
@@ -370,9 +370,8 @@ a {
   letter-spacing: 0.1em;
 }
 
-.plan--popular{
+.plan--popular {
   transform: scale(1.1);
-
 }
 .plan--popular .card__header {
   position: relative;
@@ -388,11 +387,10 @@ a {
   right: 5%;
 }
 
-.plan:hover{
+.plan:hover {
   transform: scale(1.05);
-
 }
-.plan--popular:hover{
+.plan--popular:hover {
   transform: scale(1.15);
 }
 @media screen and (min-width: 1024px) {
@@ -756,18 +754,40 @@ a {
 }
 
 /* PLANS BLOCK */
-.block-plans{
-  display: grid;
-  gap:8rem 4rem
-}
-.block-plans .card{
-  max-width: 500px;
-  margin: 0 auto
-
-}
-@media screen and (min-width: 1024px) {
-
 .block-plans {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  gap: 8rem 4rem;
+}
+.block-plans .card {
+  max-width: 500px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1024px) {
+  .block-plans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* FEATURE BLOCK */
+.feature {
+  gap: 4rem 2rem;
+  margin: 8rem;
+}
+
+.feature__img {
+  width: 100%;
+}
+
+.feature__heading {
+  margin: 1rem 0;
+}
+
+.feature:first-of-type {
+  margin-top: 6rem;
+}
+@media screen and (min-width: 769px) {
+  .feature:nth-of-type(even) .feature__content {
+    order: 2;
+  }
 }
