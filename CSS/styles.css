@@ -32,6 +32,7 @@ h2,
 h3 {
   color: var(--color-headings);
   margin-bottom: 1rem;
+  line-height: 1.1;
 }
 
 h1 {
@@ -206,7 +207,12 @@ a {
   white-space: nowrap;
   margin: 1rem 0;
 }
-
+.btn .icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  vertical-align: middle;
+}
 .btn--primary {
   background: var(--color-primary);
   color: #fff;
@@ -285,7 +291,7 @@ a {
 .input-group .input {
   border: 0;
   flex-grow: 1;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 2rem;
 }
 
 .input-group .btn {
@@ -320,8 +326,19 @@ a {
   color: #fff;
 }
 
-/* PLANS (card + badge + list + button) */
+.card--primary .badge--primary {
+  background: #126de4;
+}
 
+.card--secondary .badge--secondary {
+  background: #02cdf1;
+}
+
+
+/* PLANS (card + badge + list + button) */
+.plan {
+  transition: transform .2s ease-out;
+}
 .plan__name {
   color: #fff;
   margin: 0;
@@ -340,9 +357,6 @@ a {
   margin-right: 1rem;
 }
 
-.card--secondary .badge--secondary {
-  background: #02cdf1;
-}
 
 .plan__description {
   font-size: 2rem;
@@ -356,6 +370,10 @@ a {
   letter-spacing: 0.1em;
 }
 
+.plan--popular{
+  transform: scale(1.1);
+
+}
 .plan--popular .card__header {
   position: relative;
 }
@@ -368,6 +386,14 @@ a {
   position: absolute; /* para que la posicion absoluta funcione el contenedor ha de tener posición rleativa */
   top: -6px;
   right: 5%;
+}
+
+.plan:hover{
+  transform: scale(1.05);
+
+}
+.plan--popular:hover{
+  transform: scale(1.15);
 }
 @media screen and (min-width: 1024px) {
   .plan__name {
@@ -463,11 +489,11 @@ a {
   }
 }
 
-@media screen and (min-width: 1700px) {
+/* @media screen and (min-width: 1700px) {
   .grid--media {
     grid-template-columns: repeat(3, 1fr);
   }
-}
+}*/
 
 /* TESTIMONIALS */
 
@@ -672,4 +698,76 @@ a {
 }
 .nav__item {
   border: 0;
+}
+
+/* HERO */
+
+.hero {
+  clip-path: polygon(0% 0%, 100% 0%, 100 90%, 0 100%)
+    /* sobreescribe el clipping de la clase "block--skewed-left" */;
+}
+
+.hero__tagline {
+  font-size: 2rem;
+  color: #b9c3cf;
+  letter-spacing: 1px;
+  margin: 2rem 0 5rem;
+}
+
+.hero__image {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    padding-top: 0;
+  }
+
+  .hero__content {
+    text-align: left;
+    align-self: center;
+  }
+}
+
+/* DOMAIN BLOCK */
+
+.block-domain .input-group {
+  box-shadow: 0 0 30px 20px #e6ebee;
+  border: 0;
+  margin: 4rem auto;
+  max-width: 640px;
+}
+
+.block-domain__prices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 6rem);
+  font-size: 2rem;
+  font-weight: 600;
+  justify-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .block-domain__prices {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+}
+
+/* PLANS BLOCK */
+.block-plans{
+  display: grid;
+  gap:8rem 4rem
+}
+.block-plans .card{
+  max-width: 500px;
+  margin: 0 auto
+
+}
+@media screen and (min-width: 1024px) {
+
+.block-plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
