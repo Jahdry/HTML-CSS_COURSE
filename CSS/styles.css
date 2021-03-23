@@ -203,7 +203,7 @@ a {
   text-transform: uppercase;
   border: 0;
   border-radius: 40px;
-  padding: 2rem 3rem;
+  padding: 2rem 4vw;
   font-weight: 600;
   font-size: 1.8rem;
   cursor: pointer;
@@ -295,6 +295,7 @@ a {
 /* modificaciones para los componentes cuando están dentro de un grupo */
 .input-group .input {
   border: 0;
+  width: 0;
   flex-grow: 1;
   padding: 1.5rem 2rem;
 }
@@ -549,6 +550,9 @@ a {
   align-self: center;
 }
 
+.callout-signup {
+  transform: translateY(5rem);
+}
 @media screen and (min-width: 768px) {
   .callout .grid--media {
     /* hacemos que la columna el bolton solo ocupe el espacio del botón */
@@ -739,9 +743,10 @@ a {
 }
 
 .block-domain__prices {
+  color: var(--color-headings);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 6rem);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 6rem);
   font-size: 2rem;
   font-weight: 600;
   justify-items: center;
@@ -752,6 +757,7 @@ a {
 @media screen and (min-width: 768px) {
   .block-domain__prices {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-template-rows: 6rem;
   }
 }
 
